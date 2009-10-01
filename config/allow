@@ -1,0 +1,6 @@
+points.domain.Point:user
+points.domain.Line:guest
+org.nakedobjects.nof.core.service.SimpleRepository:user
+org.nakedobjects.nof.core.service.SimpleRepository#allInstances:guest
+points.services.DefaultRegressionService#removeAllPoints:administrator
+points.services.DefaultRegressionService#performRegression:guest
