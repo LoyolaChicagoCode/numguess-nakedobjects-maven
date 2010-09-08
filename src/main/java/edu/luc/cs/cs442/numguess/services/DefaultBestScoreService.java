@@ -25,6 +25,6 @@ public class DefaultBestScoreService extends AbstractService implements
 		final BestScore bs = getContainer().newTransientInstance(BestScore.class);
 		bs.setScore(bestScore);
 		bs.setName(name);
-		getContainer().makePersistent(bs);
+		getContainer().persist(bs);
 	}
 }
