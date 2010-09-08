@@ -2,7 +2,10 @@ package edu.luc.cs.cs442.numguess.domain;
 
 import java.util.Random;
 
+import org.apache.log4j.Logger;
 import org.nakedobjects.applib.DomainObjectContainer;
+import org.nakedobjects.applib.annotation.Disabled;
+import org.nakedobjects.applib.annotation.MemberOrder;
 
 import edu.luc.cs.cs442.numguess.services.BestScoreService;
 
@@ -34,7 +37,14 @@ public class Game {
 	}
 
 	private int answer = -1;
+
 	private int numGuesses = 0;
+
+	// NO bug: the HTML interface won't work without at least one property.
+	@Disabled
+	public int getNumGuesses() {
+		return numGuesses;
+	}
 
 	public GuessResult guess(final int guess) {
 		boolean isNewBestScore = false;
