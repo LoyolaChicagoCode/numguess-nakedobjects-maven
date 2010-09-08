@@ -2,10 +2,8 @@ package edu.luc.cs.cs442.numguess.domain;
 
 import java.util.Random;
 
-import org.apache.log4j.Logger;
 import org.nakedobjects.applib.DomainObjectContainer;
 import org.nakedobjects.applib.annotation.Disabled;
-import org.nakedobjects.applib.annotation.MemberOrder;
 
 import edu.luc.cs.cs442.numguess.services.BestScoreService;
 
