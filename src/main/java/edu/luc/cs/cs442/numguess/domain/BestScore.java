@@ -13,17 +13,14 @@ public class BestScore extends AbstractDomainObject {
 	}
 
 	public String getName() {
-		resolve();
 		return name;
 	}
 
 	public void setScore(final int score) {
 		this.score = score;
-		objectChanged();
 	}
 
 	public void setName(final String name) {
 		this.name = name;
-		objectChanged();
 	}
 }
