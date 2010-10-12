@@ -2,6 +2,7 @@ package edu.luc.cs.cs442.numguess.domain;
 
 import java.util.Random;
 
+import org.apache.log4j.Logger;
 import org.nakedobjects.applib.DomainObjectContainer;
 import org.nakedobjects.applib.annotation.Disabled;
 
@@ -12,6 +13,8 @@ import edu.luc.cs.cs442.numguess.services.BestScoreService;
  * this class per user session.
  */
 public class Game {
+
+	private final static Logger LOGGER = Logger.getLogger(Game.class);
 
 	private DomainObjectContainer container;
 
@@ -30,7 +33,7 @@ public class Game {
 	}
 
 	public void setHighScoreService(final BestScoreService bestScoreService) {
-		System.out.println(this + " setting bestScoreService to " + bestScoreService);
+		LOGGER.debug(this + " setting bestScoreService to " + bestScoreService);
 		this.bestScoreService = bestScoreService;
 	}
 
@@ -67,6 +70,6 @@ public class Game {
 	public void reset(final int min, final int max) {
 		answer = min + Math.abs(new Random().nextInt() % (max - min + 1));
 		numGuesses = 0;
-		System.out.println("The answer is " + answer);
+		LOGGER.info("The answer is " + answer);
 	}
 }

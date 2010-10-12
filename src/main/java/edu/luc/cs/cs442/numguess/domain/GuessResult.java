@@ -1,5 +1,7 @@
 package edu.luc.cs.cs442.numguess.domain;
 
+import org.apache.log4j.Logger;
+
 import edu.luc.cs.cs442.numguess.services.BestScoreService;
 
 /**
@@ -7,6 +9,8 @@ import edu.luc.cs.cs442.numguess.services.BestScoreService;
  * user. It is an example of the ValueObject (TransferObject) pattern.
  */
 public class GuessResult {
+
+	private final static Logger LOGGER = Logger.getLogger(GuessResult.class);
 
 	private int guess;
 	private int comparison;
@@ -21,7 +25,7 @@ public class GuessResult {
 	}
 
 	public void setBestScoreService(final BestScoreService bestScoreService) {
-		System.out.println(this + " setting bestScoreService to " + bestScoreService);
+		LOGGER.debug(this + " setting bestScoreService to " + bestScoreService);
 		this.bestScoreService = bestScoreService;
 	}
 
